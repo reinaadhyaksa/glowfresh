@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply inline-block bg-primary text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:bg-accent hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
+    }
+
+    .benefit-card {
+        @apply bg-secondary p-8 rounded-lg text-center transition-transform duration-300 hover:-translate-y-2;
+    }
+
+    .testimonial-card {
+        @apply bg-white p-8 rounded-lg shadow-md;
+    }
+
+    .mobile-menu {
+        @apply fixed top-0 left-0 w-full h-screen bg-white z-40 flex flex-col items-center justify-center space-y-8 transition-all duration-300 ease-in-out transform translate-x-full;
+    }
+
+    .mobile-menu.active {
+        @apply translate-x-0;
+    }
+
+    .hamburger {
+        @apply w-6 flex flex-col space-y-1.5 cursor-pointer z-50;
+    }
+
+    .hamburger span {
+        @apply block w-full h-0.5 bg-primary transition-all duration-300;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        @apply transform rotate-45 translate-y-2;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        @apply opacity-0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        @apply transform -rotate-45 -translate-y-2;
+    }
+}
+
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.lazy.loaded {
+    opacity: 1;
+}
+
+.hero-container {
+    min-height: calc(100vh - 80px);
+}
